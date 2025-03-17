@@ -179,21 +179,21 @@ h2 span{
   min-height: 100vh;
 }
 
-.about-flex{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   align-items: center;
-  
+  grid-template-areas: "text" "pic";
+  gap: 10px;
 }
 
 .about .about-text{
   max-width: 600px;
   font-size: 20px;
-  padding: 15px;
-  text-align: left;
+  margin: auto;
   border-bottom: 2px solid rgb(255, 106, 52);
-  margin-bottom: 20px;
+  grid-area: "text";
 }
 .about-text span{
   color: rgb(255, 106, 52);
@@ -204,6 +204,8 @@ h2 span{
   overflow: hidden;
   border: 10px #555;
   border-radius: 20px;
+  margin: auto;
+  grid-area: "pic";
 }
 .about .about-container .about-pic img{
   width: 1000px;
@@ -322,36 +324,32 @@ h2 span{
 }
 
 /*========FAQ=========*/
-.faq-container{
-  width: 100%;
-}
-.details{
+.faq{
   position: relative;
-  max-inline-size: 40rem;
+}
+
+.details{
   padding: 1rem;
   margin-block: 1rem 0;
-  margin-inline: auto;
   border: 2px solid rgb(255, 106, 52);
   border-radius: 0.3rem;
+}
+
+.faq-pic{
+ grid-area: "pic";
+ margin: auto;
+width: 100%;
 }
 .faq-pic img{
   width: 500px;
   height: 700px;
   object-fit: cover;
-  border-radius: 25px;
+  border-radius: 25px; 
 }
-.faq-flex{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 8px;
-  
-}
+
 .faq-text{
-  width: 600px;
-  height: auto;
-  margin-bottom: 10px;
+  margin: auto;
+  grid-area: "text";
 }
 .cat-container{
   display: flex;
@@ -447,7 +445,20 @@ h2 span{
   header{
     padding: 12px 20px;
   }
-  
+  .grid-container{
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-areas: 
+                        "text"
+                        "pic";
+    gap: 20px;
+  }
+  .faq-pic img{
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 25px; 
+  }
   
 }
 
@@ -480,6 +491,7 @@ h2 span{
   section{
     padding: 10px 20px;
   }
+  
 
 }
 @media (max-width: 400px){
